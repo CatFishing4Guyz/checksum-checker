@@ -20,7 +20,7 @@ def ask():
         checksum(file)
     elif option.upper() == 'N':
         print("You're a boring guy.")
-        bye = input("Press any key to continue...")
+        bye = input("Press any key to exit...")
         if bye == '¯\_(ツ)_/¯':
             pass
         else:
