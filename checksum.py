@@ -1,16 +1,18 @@
-import os
 import hashlib
+import binascii
+import os
 
 def checksum(filename):
     BUFFER_SIZE = 65536
     try:
         with open(f"{filename}", "rb") as f:
-            readFile = f.read(BUFFER_SIZE)
-            sha1 = hashlib.sha1(readFile).hexdigest()
-            sha256 = hashlib.sha256(readFile).hexdigest()
-            sha512 = hashlib.sha512(readFile).hexdigest()
-            md5 = hashlib.md5(readFile).hexdigest()
-            print(f"SHA1: {sha1}\nSHA256: {sha256}\nSHA512: {sha512}\nMD5: {md5}")
+            file = f.read(BUFFER_SIZE)
+            sha1 = hashlib.sha1(file).hexdigest()
+            sha256 = hashlib.sha256(file).hexdigest()
+            sha512 = hashlib.sha512(file).hexdigest()
+            md5 = hashlib.md5(file).hexdigest()
+            crc32 = binascii.crc32(file)
+            print(f"SHA1: {sha1}\nSHA256: {sha256}\nSHA512: {sha512}\nMD5: {md5}\nCRC32: {crc32 & 0xFFFFFFFF:08x}")
     except FileNotFoundError:
         print(f"{filename} isn't a file.")
 def ask():
@@ -22,7 +24,7 @@ def ask():
         print("You're a boring guy.")
         bye = input("Press any key to exit...")
         if bye == '¯\_(ツ)_/¯':
-            pass
+            quit()
         else:
             quit()
     else:
