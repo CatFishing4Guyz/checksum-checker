@@ -3,10 +3,9 @@ import binascii
 import os
 
 def checksum(filename):
-    BUFFER_SIZE = 65536
     try:
         with open(f"{filename}", "rb") as f:
-            file = f.read(BUFFER_SIZE)
+            file = f.read(131072)
             sha1 = hashlib.sha1(file).hexdigest()
             sha256 = hashlib.sha256(file).hexdigest()
             sha512 = hashlib.sha512(file).hexdigest()
@@ -22,7 +21,7 @@ def ask():
         checksum(file)
     elif option.upper() == 'N':
         print("You're a boring guy.")
-        bye = input("Press any key to exit...")
+        bye = input("Press enter key to exit...\n")
         if bye == '¯\_(ツ)_/¯':
             quit()
         else:
