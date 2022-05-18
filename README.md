@@ -14,4 +14,4 @@ Supports:
 * `CRC32`
 
 ## Credits
-Monkeys30, yours truly
+CatFishing4Guyz, yours truly
