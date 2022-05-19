@@ -23,7 +23,7 @@ def ask():
     elif option.upper() == 'N':
         print("You're a boring guy.\n")
         bye = input("Press the Enter key to exit\n")
-        if bye == '( ͡° ͜ʖ ͡°)':
+        if bye == "(╯°□°）╯ ┻━┻":
             os._exit(0)
         else:
             os._exit(0)

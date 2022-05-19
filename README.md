@@ -17,4 +17,4 @@ compared to archivers and online alternatives. I don't
 know why it does that.
 
 ## Credits
-CatFishing4Guyz, code
+CatFishing4Guyz, coding it.
