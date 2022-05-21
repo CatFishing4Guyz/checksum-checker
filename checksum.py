@@ -15,7 +15,7 @@ def checksum(filename):
             f"\nSHA512: {sha512}\nMD5: {md5}\nCRC32: {crc32 & 0xFFFFFFFF:08x}")
     except FileNotFoundError:
         print(f'''"{filename}" isn't a file.''')
-def ask():
+while True:
     option = input("Do you want to calculate the checksum of a file? (Y/N): ")
     if option.upper() == 'Y':
         file = input("What's the file you want to check out? ")
@@ -29,5 +29,3 @@ def ask():
             os._exit(0)
     else:
         print("Couldn't hear you.")
-while True:
-    ask()
